@@ -1,0 +1,60 @@
+{
+  "name": "dotenvify",
+  "version": "1.0.0",
+  "author": "xuanguyen<xuan.0211@gmail.com>",
+  "license": "MIT",
+  "description": "Loads environment variables from `.env.[development|test|production][.local]` files",
+  "keywords": [
+    "dotenv",
+    "node_env",
+    "development",
+    "test",
+    "production",
+    "local",
+    "env",
+    "environment",
+    "variables"
+  ],
+  "homepage": "https://github.com/xuanhoa88/dotenvify#readme",
+  "main": "./dist/envify.js",
+  "module": "./dist/envify.js",
+  "types": "./dist/envify.d.ts",
+  "bin": "./dist/config.js",
+  "exports": {
+    ".": "./dist/envify.js",
+    "./config": {
+      "require": "./dist/config.js",
+      "node": "./dist/config.js"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "20.6.2",
+    "babel-eslint": "10.1.0",
+    "chai": "4.3.7",
+    "conventional-changelog-cli": "2.0.35",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "mocha": "10.2.0",
+    "prettier": "2.4.1",
+    "rimraf": "4.4.1",
+    "sinon": "15.2.0",
+    "sinon-chai": "3.7.0",
+    "tmp": "0.2.1",
+    "typescript": "5.2.2"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "rimraf dist && tsc --build",
+    "test": "npm run test:unit && npm run test:integration && npm run test:types",
+    "test:unit": "mocha -r mocha.conf.js test/unit/*.spec.js",
+    "test:integration": "mocha -r mocha.conf.js test/integration/*.spec.{m,}js",
+    "test:types": "tsc",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint --fix **/*.js"
+  }
+}

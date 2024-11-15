@@ -1,0 +1,34 @@
+{
+  "files.associations": {
+    ".eslintrc": "jsonc",
+    ".prettierrc": "jsonc",
+    ".eslintignore": "ignore"
+  },
+
+  "eslint.validate": ["javascript", "typescript"],
+
+  "javascript.validate.enable": true,
+  "typescript.validate.enable": true,
+
+  "javascript.format.enable": true,
+  "typescript.format.enable": true,
+
+  "search.exclude": {
+    ".git": true,
+    "coverage": true,
+    "node_modules": true,
+    "npm-debug.log.*": true,
+    "test/**/__snapshots__": true,
+    "package-lock.json": true,
+    "*.lock": true,
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}
